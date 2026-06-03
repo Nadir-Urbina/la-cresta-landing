@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Mulish, Lora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -48,7 +49,10 @@ export default function RootLayout({
       lang="es"
       className={`${oswald.variable} ${mulish.variable} ${lora.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

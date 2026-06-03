@@ -45,11 +45,7 @@ export function Nav() {
         </nav>
 
         <div className="nav__right">
-          <div className="langtoggle" title="Idioma (próximamente)">
-            <span className="is-on">ES</span>
-            <span>EN</span>
-          </div>
-          <button className="btn btn-primary nav__cta" onClick={open}>
+<button className="btn btn-primary nav__cta" onClick={open}>
             Regístrate
           </button>
         </div>
