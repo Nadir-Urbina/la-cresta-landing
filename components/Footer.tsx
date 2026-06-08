@@ -21,14 +21,14 @@ export function Footer() {
             <a href="#" aria-label="Facebook">Facebook</a>
           </div>
         </div>
-
+{/* 
         <div className="foot__col">
           <h5>Idioma</h5>
           <div className="langtoggle langtoggle--foot" title="Idioma (próximamente)">
             <span className="is-on">Español</span>
             <span>English</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="wrap foot__base">
