@@ -18,7 +18,7 @@ export function Footer() {
         <div className="foot__col">
           <h5>Síguenos</h5>
           <div className="foot__social">
-            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=100083786604976" aria-label="Facebook">Facebook</a>
           </div>
         </div>
 {/* 
@@ -33,7 +33,7 @@ export function Footer() {
 
       <div className="wrap foot__base">
         <span>© 2026 La Cresta de la Ola. Todos los derechos reservados.</span>
-        <span>Iglesia Senderos de Luz · Desamparados, San José, Costa Rica</span>
+        {/* <span>Iglesia Senderos de Luz · Desamparados, San José, Costa Rica</span> */}
       </div>
     </footer>
   );
