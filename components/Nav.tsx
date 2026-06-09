@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { track } from '@vercel/analytics';
 import { useRegister } from './RegisterContext';
 
 const links = [
@@ -45,7 +46,10 @@ export function Nav() {
         </nav>
 
         <div className="nav__right">
-<button className="btn btn-primary nav__cta" onClick={open}>
+<button
+            className="btn btn-primary nav__cta"
+            onClick={() => { track('Registro CTA', { location: 'nav' }); open(); }}
+          >
             Regístrate
           </button>
         </div>

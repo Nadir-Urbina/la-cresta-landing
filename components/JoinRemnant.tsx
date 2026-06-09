@@ -1,6 +1,7 @@
 'use client';
 
 import { useReveal } from '@/hooks/useReveal';
+import { track } from '@vercel/analytics';
 import { useRegister } from './RegisterContext';
 import { Icons } from './Icons';
 
@@ -20,7 +21,10 @@ export function JoinRemnant() {
           <span className="join__br">— pero los quiere a todos.</span>
         </h2>
         <p className="join__q reveal d2">¿Eres parte del remanente?</p>
-        <button className="btn btn-primary join__btn reveal d3" onClick={open}>
+        <button
+          className="btn btn-primary join__btn reveal d3"
+          onClick={() => { track('Registro CTA', { location: 'join' }); open(); }}
+        >
           Quiero Unirme <Icons.arrow width={18} height={18} />
         </button>
       </div>

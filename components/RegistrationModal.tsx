@@ -34,7 +34,7 @@ export function RegistrationModal({ open, onClose }: Props) {
         <button className="modal__x" onClick={onClose} aria-label="Cerrar">
           <Icons.close width={22} height={22} />
         </button>
-        <RegistrationForm onClose={onClose} />
+        <RegistrationForm onClose={onClose} source="modal" />
       </div>
     </div>
   );

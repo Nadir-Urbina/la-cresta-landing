@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { track } from '@vercel/analytics';
 import { Icons } from './Icons';
 
 interface FormValues {
@@ -21,8 +22,7 @@ function validate(v: FormValues): FormErrors {
   const e: FormErrors = {};
   if (!v.nombre.trim() || v.nombre.trim().length < 2) e.nombre = 'Ingresa tu nombre completo.';
   const phone = v.telefono.replace(/[\s\-()]/g, '');
-  if (!phone) e.telefono = 'Ingresa tu número de teléfono.';
-  else if (!/^\+?\d{8,15}$/.test(phone)) e.telefono = 'Número inválido (8–15 dígitos).';
+  if (phone && !/^\+?\d{8,15}$/.test(phone)) e.telefono = 'Número inválido (8–15 dígitos).';
   if (!v.email.trim()) e.email = 'Ingresa tu correo electrónico.';
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim())) e.email = 'Correo electrónico inválido.';
   if (!v.acepta) e.acepta = 'Confirma para continuar.';
@@ -44,9 +44,10 @@ function Field({ label, hint, error, children }: { label: string; hint?: string;
 
 interface Props {
   onClose?: () => void;
+  source?: 'modal' | 'page';
 }
 
-export function RegistrationForm({ onClose }: Props) {
+export function RegistrationForm({ onClose, source = 'page' }: Props) {
   const empty: FormValues = { nombre: '', telefono: '', email: '', acepta: false };
 
   const [v, setV] = useState<FormValues>(empty);
@@ -63,6 +64,7 @@ export function RegistrationForm({ onClose }: Props) {
 
   async function submit(ev: React.FormEvent) {
     ev.preventDefault();
+    track('Completar Registro', { source });
     setTouched(true);
     const e = validate(v);
     setErr(e);

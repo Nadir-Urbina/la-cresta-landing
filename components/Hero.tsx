@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { track } from '@vercel/analytics';
 import { useRegister } from './RegisterContext';
 import { Icons } from './Icons';
 
@@ -54,7 +55,10 @@ export function Hero() {
         </div>
 
         <div className="hero__cta reveal in d3">
-          <button className="btn btn-primary" onClick={open}>
+          <button
+            className="btn btn-primary"
+            onClick={() => { track('Registro CTA', { location: 'hero' }); open(); }}
+          >
             Regístrate al Evento <Icons.arrow width={18} height={18} />
           </button>
           <a

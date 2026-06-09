@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import { useReveal } from '@/hooks/useReveal';
 import { useRegister } from './RegisterContext';
 import Image from 'next/image';
@@ -74,7 +75,10 @@ export function Conference() {
             <span className="conf__free">
               <Icons.ticket width={18} height={18} /> Entrada Gratuita · Free Admission
             </span>
-            <button className="btn btn-primary btn-block" onClick={open}>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={() => { track('Registro CTA', { location: 'conference' }); open(); }}
+            >
               Regístrate al Evento <Icons.arrow width={18} height={18} />
             </button>
           </div>
