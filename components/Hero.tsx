@@ -54,9 +54,16 @@ export function Hero() {
           </div>
         </div>
 
+        <div className="hero__free reveal in d2">
+          <span className="hero__free-badge">
+            <Icons.ticket width={18} height={18} />
+            EVENTO 100% GRATUITO
+          </span>
+        </div>
+
         <div className="hero__cta reveal in d3">
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn--pulse"
             onClick={() => { track('Registro CTA', { location: 'hero' }); open(); }}
           >
             Regístrate al Evento <Icons.arrow width={18} height={18} />

@@ -25,7 +25,7 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "La Cresta de la Ola 2026 — Costa Rica",
-  description: "Conferencia profética | Julio 9, 10 y 11 · Iglesia Senderos de Luz, Desamparados, San José, Costa Rica. Entrada gratuita.",
+  description: "Conferencia profética | Julio 9, 10 y 11 · Iglesia Senderos de Luz, Desamparados, San José, Costa Rica. EVENTO GRATUITO.",
   icons: {
     icon: [
       { url: "/favicon_io/favicon.ico" },

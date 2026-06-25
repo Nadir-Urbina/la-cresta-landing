@@ -111,8 +111,13 @@ export function RegistrationForm({ onClose, source = 'page' }: Props) {
         <span className="kicker">Registro al Evento</span>
         <h3>La Cresta de la Ola · 2026</h3>
         <p className="modal__sub">
-          Julio 9, 10 y 11 · 6:30 PM · Iglesia Senderos de Luz, Desamparados. Entrada gratuita.
+          Julio 9, 10 y 11 · 6:30 PM · Iglesia Senderos de Luz, Desamparados.
         </p>
+      </div>
+
+      <div className="modal__free">
+        <Icons.ticket width={18} height={18} />
+        <span>Evento 100% Gratuito</span>
       </div>
 
       <form className="modal__form" onSubmit={submit} noValidate>
@@ -128,16 +133,6 @@ export function RegistrationForm({ onClose, source = 'page' }: Props) {
         </Field>
 
         <div className="modal__row">
-          <Field label="Teléfono" hint="WhatsApp" error={err.telefono}>
-            <input
-              className={`inp${err.telefono ? ' inp--err' : ''}`}
-              type="tel"
-              value={v.telefono}
-              placeholder="+506 0000 0000"
-              autoComplete="tel"
-              onChange={(e) => set('telefono', e.target.value)}
-            />
-          </Field>
           <Field label="Correo electrónico" error={err.email}>
             <input
               className={`inp${err.email ? ' inp--err' : ''}`}
@@ -146,6 +141,16 @@ export function RegistrationForm({ onClose, source = 'page' }: Props) {
               placeholder="tucorreo@ejemplo.com"
               autoComplete="email"
               onChange={(e) => set('email', e.target.value)}
+            />
+          </Field>
+          <Field label="Teléfono" hint="Opcional · WhatsApp" error={err.telefono}>
+            <input
+              className={`inp${err.telefono ? ' inp--err' : ''}`}
+              type="tel"
+              value={v.telefono}
+              placeholder="+506 0000 0000"
+              autoComplete="tel"
+              onChange={(e) => set('telefono', e.target.value)}
             />
           </Field>
         </div>

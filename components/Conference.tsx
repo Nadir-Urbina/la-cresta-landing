@@ -73,7 +73,7 @@ export function Conference() {
               </div>
             </div>
             <span className="conf__free">
-              <Icons.ticket width={18} height={18} /> Entrada Gratuita · Free Admission
+              <Icons.ticket width={18} height={18} /> EVENTO GRATUITO · Free Admission
             </span>
             <button
               className="btn btn-primary btn-block"
