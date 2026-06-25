@@ -57,7 +57,7 @@ export function Hero() {
         <div className="hero__free reveal in d2">
           <span className="hero__free-badge">
             <Icons.ticket width={18} height={18} />
-            EVENTO 100% GRATUITO
+            EVENTO GRATUITO
           </span>
         </div>
 

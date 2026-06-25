@@ -117,7 +117,7 @@ export function RegistrationForm({ onClose, source = 'page' }: Props) {
 
       <div className="modal__free">
         <Icons.ticket width={18} height={18} />
-        <span>Evento 100% Gratuito</span>
+        <span>Evento GRATUITO</span>
       </div>
 
       <form className="modal__form" onSubmit={submit} noValidate>
